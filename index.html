@@ -3,8 +3,24 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>SURF TRIBE FIJI — Boat Hire &amp; Cloudbreak Surf Transfers, Fiji</title>
+<title>Reef Pass Marine — Boat Hire &amp; Cloudbreak Surf Transfers, Fiji</title>
 <meta name="description" content="Boat hire, surf transfers to Cloudbreak, and on-water refreshments in Fiji. Request a booking online." />
+
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="icon" href="favicon.ico" sizes="any">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="192x192" href="icon-192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="icon-512.png">
+<meta name="theme-color" content="#0b2b30">
+<script>
+  (function () {
+    var saved = localStorage.getItem('reefpass-theme');
+    var theme = (saved === 'light' || saved === 'dark')
+      ? saved
+      : (window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark');
+    document.documentElement.setAttribute('data-theme', theme);
+  })();
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -21,18 +37,25 @@
         <path d="M4 27c3 0 3-3 6-3s3 3 6 3 3-3 6-3 3 3 6 3" stroke="#8FC7B8" stroke-width="2" stroke-linecap="round"/>
         <path d="M16 4L16 17M16 4L11 8M16 4L21 8" stroke="#FF6A4D" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
       </svg>
-      SURF TRIBE FIJI
+      Reef Pass Marine
     </a>
     <nav class="nav-links" id="navLinks">
       <a href="#services">Services</a>
+      <a href="#gallery">Gallery</a>
       <a href="#fleet">Fleet</a>
       <a href="#book">Book</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a href="#book" class="btn btn-primary nav-cta">Check availability</a>
-    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
-      <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-    </button>
+    <div class="nav-right">
+      <a href="#book" class="btn btn-primary nav-cta">Check availability</a>
+      <button class="theme-toggle" id="themeToggle" aria-label="Switch to light mode">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="4.5" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.5v3M12 18.5v3M4.2 4.2l2.1 2.1M17.7 17.7l2.1 2.1M2.5 12h3M18.5 12h3M4.2 19.8l2.1-2.1M17.7 6.3l2.1-2.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none"><path d="M20 14.5A8.5 8.5 0 0 1 9.5 4a8.5 8.5 0 1 0 10.5 10.5Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg>
+      </button>
+      <button class="nav-toggle" id="navToggle" aria-label="Toggle menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M3 6h18M3 12h18M3 18h18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+      </button>
+    </div>
   </div>
 </header>
 
@@ -40,6 +63,8 @@
 
   <!-- ============ HERO ============ -->
   <section id="home" class="hero">
+    <img class="hero-photo" src="images/gallery-cutback.jpg" alt="Surfer carving a turn on a wave in Fiji" fetchpriority="high">
+    <div class="hero-scrim" aria-hidden="true"></div>
     <svg class="contour-bg" viewBox="0 0 1200 800" preserveAspectRatio="none" aria-hidden="true">
       <path d="M-50,600 C150,560 250,650 450,610 C650,570 750,640 950,600 C1050,580 1150,610 1250,590" />
       <path d="M-50,500 C150,460 300,540 500,500 C700,460 800,530 1000,490 C1100,470 1200,500 1250,480" />
@@ -112,6 +137,28 @@
   <div class="divider" aria-hidden="true">
     <svg viewBox="0 0 1200 64" preserveAspectRatio="none"><path d="M0,32 C150,10 300,54 450,32 C600,10 750,54 900,32 C1050,10 1150,40 1200,32" /></svg>
   </div>
+
+  <!-- ============ GALLERY ============ -->
+  <section id="gallery" class="gallery">
+    <div class="wrap">
+      <div class="section-head">
+        <div class="eyebrow">On the wave</div>
+        <h2>What you're actually chasing</h2>
+        <p>Cloudbreak on a good swell — the reason for the whole trip.</p>
+      </div>
+
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="images/gallery-cutback.jpg" alt="Surfer carving a cutback on a wave in Fiji" loading="lazy">
+          <div class="gallery-caption">Cloudbreak, mid-tide</div>
+        </div>
+        <div class="gallery-item">
+          <img src="images/gallery-barrel.jpg" alt="Surfer riding deep inside a large barreling wave" loading="lazy">
+          <div class="gallery-caption">Inside the pass</div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ============ FLEET ============ -->
   <section id="fleet" class="fleet">
@@ -279,11 +326,11 @@
         <div>
           <div class="contact-item">
             <div class="lbl">WhatsApp / Phone</div>
-            <div class="val"><a href="tel:+6792164200">+679 000 0000</a></div>
+            <div class="val"><a href="tel:+6790000000">+679 000 0000</a></div>
           </div>
           <div class="contact-item">
             <div class="lbl">Email</div>
-            <div class="val"><a href="mailto:knabau82@gmail.com">knabau82@gmail.com</a></div>
+            <div class="val"><a href="mailto:bookings@reefpassmarine.fj">bookings@reefpassmarine.fj</a></div>
           </div>
           <div class="contact-item">
             <div class="lbl">Departure point</div>
@@ -305,7 +352,7 @@
 
 <footer>
   <div class="wrap">
-    <span>© <span id="year"></span> SURF TRIBE FIJI, Fiji.</span>
+    <span>© <span id="year"></span> Reef Pass Marine, Fiji.</span>
     <span>Bookings are requests until confirmed by our crew.</span>
   </div>
 </footer>
