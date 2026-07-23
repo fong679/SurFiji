@@ -17,6 +17,32 @@ navLinks.querySelectorAll('a').forEach(link => {
 });
 
 // ------------------------------------------------------------
+// Light / dark theme toggle
+// ------------------------------------------------------------
+const THEME_KEY = 'reefpass-theme';
+const themeToggle = document.getElementById('themeToggle');
+const root = document.documentElement;
+
+function applyTheme(theme) {
+  root.setAttribute('data-theme', theme);
+  themeToggle.setAttribute('aria-label', theme === 'light' ? 'Switch to dark mode' : 'Switch to light mode');
+}
+
+function getInitialTheme() {
+  const saved = localStorage.getItem(THEME_KEY);
+  if (saved === 'light' || saved === 'dark') return saved;
+  return window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+}
+
+applyTheme(getInitialTheme());
+
+themeToggle.addEventListener('click', () => {
+  const next = root.getAttribute('data-theme') === 'light' ? 'dark' : 'light';
+  localStorage.setItem(THEME_KEY, next);
+  applyTheme(next);
+});
+
+// ------------------------------------------------------------
 // Booking form
 // ------------------------------------------------------------
 // CONFIG: update this to your real WhatsApp number (international
