@@ -1,5 +1,5 @@
 // ============================================================
-// Reef Pass Marine — site interactions
+// Surf Tribe Fiji — site interactions
 // ============================================================
 
 // Footer year
@@ -48,7 +48,7 @@ themeToggle.addEventListener('click', () => {
 // CONFIG: update this to your real WhatsApp number (international
 // format, no + or spaces) and business email.
 const WHATSAPP_NUMBER = '6790000000';
-const BOOKING_EMAIL = 'bookings@reefpassmarine.fj';
+const BOOKING_EMAIL = 'bookings@surftribefiji.com';
 
 const form = document.getElementById('bookingForm');
 const statusEl = document.getElementById('form-status');
@@ -77,7 +77,7 @@ function validate(b) {
 
 function buildMessage(b) {
   const lines = [
-    `Booking request — Reef Pass Marine`,
+    `Booking request — Surf Tribe Fiji`,
     `Trip: ${b.tripType}`,
     `Date: ${b.date}`,
     `Time: ${b.time}`,
@@ -115,7 +115,7 @@ emailFallbackBtn.addEventListener('click', () => {
   }
 
   const message = buildMessage(booking);
-  const subject = encodeURIComponent('Booking request — Reef Pass Marine');
+  const subject = encodeURIComponent('Booking request — Surf Tribe Fiji');
   const body = encodeURIComponent(message);
   statusEl.textContent = 'Opening your email client with the booking details...';
   window.location.href = `mailto:${BOOKING_EMAIL}?subject=${subject}&body=${body}`;
